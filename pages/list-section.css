@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+section {
+  margin: 2rem 0 0 1.5rem;
+}
+ul {
+  color: darkmagenta; /* using element selector,the color is inherited by all the child elements of ul */
+}
+#unordered {
+  color: darkblue;
+  font-size: 18px;                      /* the id selector overrides the element selector above */
+}
+.mylist1 {
+  color: aquamarine; /* the class selector property isn't effective even though it's at he bottom */
+}
+ul li {
+  font-family: monospace;
+}
+/* the font-family is applied to all descendant li elements */
+.l-one {
+  font-family: initial; /* setting the initial value changes only the elements with class, which has higher specificity to the element's initial font-family */
+}
+#ordered1 {
+  color: initial; /* color turned back to initial value black at first */
+}
+.mylist2 > li {
+  color: crimson; /* combining class & child selector here shows higher specificity than just ID selctor */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.mylist2 {
+  color: cadetblue; /* color isnt effective using class selector alone has less specificity */
+}
+.mylist2 > .l-three {
+  color: inherit; /* the list item 3 inheited it's parent color which was set to initial value as seen above */
+}
+#ordered2 {
+  color: darkgoldenrod;
+  font-size: initial;
+}
+#ordered2 > li {
+  color: darkgreen;
+}
+/* combining id and child selector will have higher specificity than combining class & child selector */
+.mylist3 > li {
+  color: blue;
+}
+#ordered2 > .l-three {
+  color: inherit; /* third item inherits it's parent color since the parent <ol> was assigned a specific color
+                        other wise it would inherit it's ancestor's color which was blue */
+}
